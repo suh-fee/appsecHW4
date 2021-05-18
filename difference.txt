@@ -1,0 +1,19 @@
+Safi Hasani
+Application Security
+Assignment 4
+
+2.1
+
+1. There are two types of intents; explicit and implicit intents. Explicit intents define a specific application or activity to follow up on the activity. Implicit intents do not and instead declare a generalized filter that needs to be performed, allowing any application/activity that may handle that action take over.
+
+2. Explicit intents are more secure. Since they inherently declare which app/activity should follow up on the request, they avoid malicious application from taking advantage of the request and the permissions/data that request grants. Implicit intents allow any application that matches the intent filter to fulfill requests, which is inherently less secure.
+
+3. The example is an implicit activity.
+
+4. The example is an explicit activity.
+
+5. Explicit intents are a more responsible way of doing an intent.
+
+CHANGE MADE:
+
+Instead of looking for any application to open that fits the ACTION_VIEW filter, I switched it (on line 69) to specifically use the defined user activity CardScrollingActivity, as the page it should direct to involves looking at all available gift cards post registration. I use the context activity variable, as the other parameters are passed in after through parameter assigning
