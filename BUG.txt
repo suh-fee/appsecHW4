@@ -1,1 +1,4 @@
 
+I believe that the vulnerability useCard() is called on line 48 of UseCard.kt. The API call for CardInterface.kt uses the token and card ID. The cardID could be ANY card ID in the system, meaning that users can use cards that are not their own. The token check tries to mitigate this, as it verifies that the user using the card is a valid one, but it does not guarantee that the card found is one they own.
+
+A fix to this could be done through a check to all gift cards the user associated to the token. If the cardID to be used is within the result of all owned-giftcards, you may allow the user to use it. If not, an error can be returned.
